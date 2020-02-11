@@ -18,14 +18,14 @@ class Module
       @[key] = value
     obj.extended?.apply(@)
     @
-    
+
 Events =
   ClassMethods:
     extended: ->
       @events ||= {}
       @include Events.InstanceMethods
     upon: (eventName, callback) ->
-      @events[eventName] || = []
+      @events[eventName] ||= []
       @events[eventName].push callback
       this # Just to chain it if we need to
 
@@ -145,7 +145,7 @@ class Model extends Module
       setter( message ) if field
     @
 
-  
+
 # Export it all:
 ko.Module = Module
 ko.Model = Model
